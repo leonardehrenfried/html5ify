@@ -60,14 +60,39 @@ var Amazon = {
     return audio;
   },
 
+  createPauseButton : function(){
+    var button = document.createElement("img");
+    button.src = chrome.extension.getURL('/pause.png');
+    button.style.cursor = 'pointer';
+    return button;
+  },
+
   playPreview : function(anchor, url){
+    var that = this;
+
     var audio = this.createAudio(url);
-    console.log(audio);
+    var pause = this.createPauseButton();
+
+    pause.addEventListener("click", function(){
+      audio.pause();
+      that.revertPlayButton(anchor, pause);
+    }, true);
+
+    anchor.parentNode.appendChild(pause);
+    anchor.style.display = 'none';
+  },
+
+  revertPlayButton : function(play, pause){
+    play.style.display = 'inline';
+    pause.parentNode.removeChild(pause);  
   },
 
   run : function(){
-    var anchors = this.getAnchors();
-    this.attachEvents(anchors);
+    if(window.location.host.indexOf("amazon.") > -1){
+      var anchors = this.getAnchors();
+      this.attachEvents(anchors);
+    }
+
   }
 
 };
