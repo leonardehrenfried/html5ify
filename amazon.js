@@ -32,11 +32,37 @@ var Amazon = {
   },
 
   handleClick : function(anchor){
+    var that = this;
+    
     //could be the image that the user clicked on
     if(anchor.tagName.toLower !== 'a'){
       anchor = anchor.parentNode;
     }
-    console.log(anchor.href); 
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", anchor.href, true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4) {
+        that.playPreview(anchor, xhr.responseText);
+      }
+    };
+    xhr.send();
+  },
+  
+  /*
+   * Creates a fully configured <audio> tag
+   */
+  createAudio : function(url){
+    var audio = document.createElement("audio");
+    audio.controls = true;
+    audio.autoplay = true;
+    audio.src = url;
+    return audio;
+  },
+
+  playPreview : function(anchor, url){
+    var audio = this.createAudio(url);
+    console.log(audio);
   },
 
   run : function(){
