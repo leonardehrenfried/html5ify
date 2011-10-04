@@ -11,6 +11,9 @@ var Amazon = {
    */
   getAnchors : function(){
     var anchors = document.querySelectorAll(".trackList td.playcol>a");
+    if(anchors.length === 0){
+      anchors = document.querySelectorAll(".mp3Tracks td.playCol>a");
+    }
     return anchors;
   },
   
@@ -35,7 +38,7 @@ var Amazon = {
     var that = this;
     
     //could be the image that the user clicked on
-    if(anchor.tagName.toLower !== 'a'){
+    if(anchor.tagName.toLowerCase() !== 'a'){
       anchor = anchor.parentNode;
     }
 
