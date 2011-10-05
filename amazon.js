@@ -1,6 +1,6 @@
 ﻿/* 
  * HTML5ify for Amazon Music
- * Makes Amazon Music preview play in a <audio> tag instead of Flash
+ * Makes Amazon Music preview play in ab <audio> tag instead of Flash
  * Author: Leonard Ehrenfried <leonard.ehrenfried@web.de>
  */
 
