@@ -58,7 +58,6 @@ var Amazon = {
   createAudio : function(url){
     var audio = document.createElement("audio");
     audio.controls = true;
-    audio.autoplay = true;
     audio.src = url;
     return audio;
   },
@@ -81,6 +80,11 @@ var Amazon = {
       that.revertPlayButton(anchor, pause);
     }, true);
 
+    audio.addEventListener("stop", function(){
+      that.revertPlayButton(anchor, pause);
+    });
+
+    audio.play();
     anchor.parentNode.appendChild(pause);
     anchor.style.display = 'none';
   },
