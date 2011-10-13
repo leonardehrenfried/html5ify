@@ -1,6 +1,6 @@
 {
    "content_scripts": [ {
-      "js": [ "amazon.js" ],
+      "js": ["util.js", "amazon.js", "youtube.js" ],
       "matches": [ "http://*/*", "https://*/*" ]
    } ],
    "description": "Forces websites like Amazon and Youtube give you HTML5 media instead of wrapping it in Flash",
