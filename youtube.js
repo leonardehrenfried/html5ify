@@ -1,4 +1,4 @@
-var Youtube = {
+sites.push({
 
   shouldRun : function(){
     return window.location.host.indexOf("youtube.com") !== - 1;
@@ -42,6 +42,5 @@ var Youtube = {
     }
 
   }
-};
+});
 
-Youtube.run();

@@ -3,3 +3,5 @@ var h5log = function(msg){
     window.console.log("[html5ify] " + msg);
   }
 };
+
+var sites = [];

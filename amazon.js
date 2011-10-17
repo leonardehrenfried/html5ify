@@ -4,7 +4,7 @@
  * Author: Leonard Ehrenfried <leonard.ehrenfried@web.de>
  */
 
-var Amazon = {
+sites.push({
    
   /*
    * Fetches all links that are play buttons
@@ -95,14 +95,11 @@ var Amazon = {
   },
 
   run : function(){
-    if(window.location.host.indexOf("amazon.") > -1){
       var anchors = this.getAnchors();
       this.attachEvents(anchors);
-    }
+  },
 
+  shouldRun : function(){
+    return (window.location.host.indexOf("amazon.") > -1);
   }
-
-};
-
-Amazon.run();
-
+});
