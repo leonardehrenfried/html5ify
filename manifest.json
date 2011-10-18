@@ -6,11 +6,10 @@
    "description": "Forces websites like Amazon and Youtube give you HTML5 media instead of wrapping it in Flash",
    "permissions" : ["http://*amazon.de", "http://*amazon.com", "http://*amazon.co.uk"],
    "icons": {
-      "128": "html5-128.png",
-      "16":  "html5-16.png",
-      "48":  "html5-48.png"
+      "128": "icon_128.png",
+      "16":  "icon_16.png",
+      "48":  "icon_48.png"
    },
    "name": "HTML5ify",
-   "update_url": "http://clients2.google.com/service/update2/crx",
-   "version": "0.1"
+   "version": "0.2"
 }
