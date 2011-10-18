@@ -10,7 +10,9 @@ Implemented so far:
 * You're automatically joining the [Youtube HTML5 beta](http://youtube.com/html5)
 * You use the Vimeo HTML5 player
 
+Patches and improvements are very welcome.
+
 ### Disclaimer
 
-If you buy something on Amazon I will set an affiliate code. If you
-object to this, just clone the repo and remove the code.
+This extension sets Amazon affiliate code. If you object to this, just clone 
+the repo and remove the code.
