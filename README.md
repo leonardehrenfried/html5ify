@@ -14,5 +14,5 @@ Patches and improvements are very welcome.
 
 ### Disclaimer
 
-This extension sets Amazon affiliate code. If you object to this, just clone 
+This extension sets an Amazon affiliate code. If you object to this, just clone 
 the repo and remove the code.
