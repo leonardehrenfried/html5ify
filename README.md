@@ -9,8 +9,8 @@ This extension is perfect if you have uninstalled Flash, like I did.
 Implemented so far:
 
 * Amazon.[de|com|co.uk] song previews are played in an HTML5 ```<audio>``` tag
-* You're automatically joining the [Youtube HTML5 beta](http://youtube.com/html5)
-* You use the Vimeo HTML5 player
+* You're always automatically joining the [Youtube HTML5 beta](http://youtube.com/html5)
+* You always use the Vimeo HTML5 player
 
 Patches and improvements are very welcome.
 
