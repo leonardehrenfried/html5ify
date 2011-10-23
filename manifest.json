@@ -1,14 +1,16 @@
 {
    "name": "HTML5ify",
-   "version": "0.4",
+   "version": "0.5",
    "description": "Forces websites like Amazon and Youtube to give you HTML5 media instead of wrapping it in Flash",
    "content_scripts": [ {
       "js": ["util.js", 
-             "amazon.js", "youtube.js", "vimeo.js", 
+             "amazon.js", "youtube.js", "vimeo.js", "onion.js",
              "dispatch.js"],
-      "matches": [ "http://*/*", "https://*/*" ]
+      "matches": [ "*://*/*", "https://*/*" ]
    } ],
-   "permissions" : ["http://*amazon.de", "http://*amazon.com", "http://*amazon.co.uk"],
+   "background_page": "background.html", 
+   "permissions" : ["experimental" ],
+                    //"http://*amazon.de", "http://*amazon.com", "http://*amazon.co.uk"],
    "icons": {
       "128": "icon_128.png",
       "16":  "icon_16.png",

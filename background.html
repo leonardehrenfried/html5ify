@@ -1,0 +1,40 @@
+<html>
+  <script>
+    chrome.experimental.webRequest.onBeforeSendHeaders.addListener(
+    // Chrome will call your listener function in response to every
+    // HTTP request
+    function( details ) {
+
+      var headers = details.requestHeaders,
+      blockingResponse = {};
+
+      // Each header parameter is stored in an array. Since Chrome
+      // makes no guarantee about the contents/order of this array,
+      // you'll have to iterate through it to find for the
+      // 'User-Agent' element
+      for( var i = 0, l = headers.length; i < l; ++i ) {
+        if( headers[i].name == 'User-Agent' ) {
+          headers[i].value = 'Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.10';
+          break;
+        }
+        // If you want to modify other headers, this is the place to
+        // do it. Either remove the 'break;' statement and add in more
+        // conditionals or use a 'switch' statement on 'headers[i].name'
+      }
+
+      blockingResponse.requestHeaders = headers;
+      return blockingResponse;
+    },
+    // The 'reqestFilter' parameter allows you to only listen for
+    // certain requests--it's not necessary for the general case,
+    // so we'll just pass an empty object
+    {},
+    // The 'extraInfoSpec' parameter modifies how Chrome calls your
+    // listener function. 'requestHeaders' ensures that the 'details'
+    // object has a key called 'requestHeaders' containing the headers,
+    // and 'blocking' ensures that the object your function returns is
+    // used to overwrite the headers
+    ['requestHeaders','blocking']
+    );
+  </script>
+</html>
