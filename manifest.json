@@ -9,8 +9,8 @@
       "matches": [ "*://*/*", "https://*/*" ]
    } ],
    "background_page": "background.html", 
-   "permissions" : ["experimental" ],
-                    //"http://*amazon.de", "http://*amazon.com", "http://*amazon.co.uk", "http://*.theonion.com"],
+   "permissions" : ["experimental" 
+                    "http://*amazon.de", "http://*amazon.com", "http://*amazon.co.uk", "http://*.theonion.com"],
    "icons": {
       "128": "icon_128.png",
       "16":  "icon_16.png",
