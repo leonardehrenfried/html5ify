@@ -1,10 +1,11 @@
 {
    "name": "HTML5ify",
-   "version": "0.4",
+   "version": "0.5",
    "description": "Forces websites like Amazon and Youtube to give you HTML5 media instead of wrapping it in Flash",
+   "manifest_version" : 2,
    "content_scripts": [ {
-      "js": ["util.js", 
-             "amazon.js", "youtube.js", "vimeo.js", 
+      "js": ["util.js",
+             "amazon.js", "youtube.js", "vimeo.js",
              "dispatch.js"],
       "matches": [ "http://*/*", "https://*/*" ]
    } ],
